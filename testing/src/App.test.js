@@ -1,7 +1,6 @@
 /* eslint-disable testing-library/prefer-presence-queries */ // Отключаем правило prefer-presence-queries
 /* eslint-disable testing-library/no-debugging-utils */ // Отключаем правило no-debugging-utils
 import { render, screen, fireEvent } from '@testing-library/react'; // Импортируем методы для тестирования
-import userEvent from '@testing-library/user-event';
 import App from './App'; // Импортируем компонент для тестирования
 
 // describe('TEST APP', () => {
