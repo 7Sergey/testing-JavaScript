@@ -1,6 +1,6 @@
 /* eslint-disable testing-library/prefer-presence-queries */
 /* eslint-disable testing-library/no-debugging-utils */
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, userEvent } from '@testing-library/react';
 import App from './App';
 
 describe('TEST APP', () => {
@@ -51,10 +51,12 @@ test('INPUT EVENT', () => {
   render(<App />);
   const input = screen.getByPlaceholderText(/input value.../i);
   expect(screen.queryByTestId('value-elem')).toContainHTML('');
-  fireEvent.change(input, {
-    target: {
-      value: '1234',
-    },
-  });
+  // fireEvent.change(input, {
+  //   target: {
+  //     value: '1234',
+  //   },
+  // });
+
+  userEvent.type(input, '123123');
   expect(screen.queryByTestId('value-elem')).toContainHTML('1234');
 });
